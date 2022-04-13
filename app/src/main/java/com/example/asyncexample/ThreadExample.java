@@ -10,7 +10,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 public class ThreadExample extends AppCompatActivity {
+
+    ExecutorService service = Executors.newFixedThreadPool(3);
 
     int mCounter;
 
@@ -56,9 +63,12 @@ public class ThreadExample extends AppCompatActivity {
 
 
 
-        Thread thread = new Thread(runnable);
-        thread.start();
+        /*Thread thread = new Thread(runnable);
+        thread.start();*/
 
+        Future future = service.submit(runnable);
+
+        //future.get();
     }
 }
 
