@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AsyncExample">
         <activity
+            android:name=".ThreadExample"
+            android:exported="false" />
+        <activity
             android:name=".AsyncTaskExample"
             android:exported="false" />
         <activity
